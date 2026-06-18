@@ -1,6 +1,385 @@
 {
-  "experiment": "27-1",
-  "summary": "",
-  "metrics": {},
-  "notes": []
+  "run_started_at": "2026-06-17 18:23:00",
+  "approx_train_runtime_min": 100.44,
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "model_name": "hfl/chinese-macbert-large",
+  "training_mode": "v27_1_macbert_large_combined_384len_2seed",
+  "quick_test": false,
+  "epochs_note": "normal",
+  "base_seeds": [
+    42,
+    2026
+  ],
+  "quality_seeds": [
+    42,
+    2026
+  ],
+  "run_seed": 42,
+  "train_path": "/kaggle/input/datasets/avocadolo00/esgaicup/data/vpesg_4k_train_1000.json",
+  "official_val_path": "/kaggle/input/datasets/avocadolo00/esgaicup/data/vpesg4k_val_1000.json",
+  "output_dir": "/kaggle/working/outputs_esg_v27_1_macbert_large_combined_384len_2seed",
+  "train_size": 1800,
+  "val_size": 200,
+  "MAX_LEN": 384,
+  "QUALITY_MAX_LEN": 384,
+  "TRUNCATION_MODE": "head_tail",
+  "METADATA_PREFIX": true,
+  "HEAD_TAIL_HEAD_RATIO": 0.6,
+  "COMBINE_TRAIN_AND_VAL": true,
+  "HOLDOUT_RATIO": 0.1,
+  "HOLDOUT_SEED": 20260619,
+  "score_note": "selected_validation_score is internal holdout after combining train+official_val; not directly comparable with official-val runs. v27-1 uses MacBERT-large with the same combined holdout setting as v26-1 for bold model-family diversity.",
+  "BATCH_SIZE": 1,
+  "effective_batch_size": 16,
+  "EPOCHS": 8,
+  "QUALITY_EPOCHS": 6,
+  "LR": 1e-05,
+  "QUALITY_LR": 1e-05,
+  "WEIGHT_DECAY": 0.01,
+  "WARMUP_RATIO": 0.1,
+  "DROPOUT": 0.2,
+  "LABEL_SMOOTHING": 0.03,
+  "QUALITY_LABEL_SMOOTHING": 0.02,
+  "GRAD_ACCUM_STEPS": 16,
+  "PATIENCE": 3,
+  "QUALITY_NOT_CLEAR_OVERSAMPLE": 4,
+  "QUALITY_NOT_CLEAR_WEIGHT_BOOST": 2.3,
+  "base_single_seed_results": [
+    {
+      "seed": 42,
+      "best_epoch": 5,
+      "best_score_saved": 0.6041359124115746,
+      "time_min": 28.348417417208353,
+      "path": "/kaggle/working/outputs_esg_v27_1_macbert_large_combined_384len_2seed/base_seed_42.pt"
+    },
+    {
+      "seed": 2026,
+      "best_epoch": 4,
+      "best_score_saved": 0.6286455324891091,
+      "time_min": 24.680704267819724,
+      "path": "/kaggle/working/outputs_esg_v27_1_macbert_large_combined_384len_2seed/base_seed_2026.pt"
+    }
+  ],
+  "quality_single_seed_results": [
+    {
+      "seed": 42,
+      "best_epoch": 1,
+      "best_score_saved": 0.42874805746531025,
+      "time_min": 18.153785153230032,
+      "path": "/kaggle/working/outputs_esg_v27_1_macbert_large_combined_384len_2seed/quality_seed_42.pt"
+    },
+    {
+      "seed": 2026,
+      "best_epoch": 4,
+      "best_score_saved": 0.425177025963808,
+      "time_min": 27.313506642977398,
+      "path": "/kaggle/working/outputs_esg_v27_1_macbert_large_combined_384len_2seed/quality_seed_2026.pt"
+    }
+  ],
+  "base_candidate_scores": [
+    {
+      "name": "base_first3_p0.65_e0.4875",
+      "score": 0.6293173094314581,
+      "params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "base_source": "first3"
+    },
+    {
+      "name": "base_all_p0.65_e0.4875",
+      "score": 0.6293173094314581,
+      "params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "base_source": "all"
+    },
+    {
+      "name": "base_first3_p0.65_e0.5",
+      "score": 0.6246038645331681,
+      "params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "base_source": "first3"
+    },
+    {
+      "name": "base_all_p0.65_e0.5",
+      "score": 0.6246038645331681,
+      "params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "base_source": "all"
+    }
+  ],
+  "final_candidate_scores_top": [
+    {
+      "mode": "base_only",
+      "score": 0.6284317388107153,
+      "q_th": null,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_only",
+      "score": 0.6284317388107153,
+      "q_th": null,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_quality",
+      "score": 0.627678680611566,
+      "q_th": 0.3,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_quality",
+      "score": 0.627678680611566,
+      "q_th": 0.3,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "quality_refine",
+      "score": 0.6242680882575876,
+      "q_th": null,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": {
+        "nc_threshold": 0.3,
+        "clear_threshold": 0.525,
+        "margin": 0.075
+      }
+    },
+    {
+      "mode": "quality_refine",
+      "score": 0.6242680882575876,
+      "q_th": null,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": {
+        "nc_threshold": 0.3,
+        "clear_threshold": 0.525,
+        "margin": 0.075
+      }
+    },
+    {
+      "mode": "base_only",
+      "score": 0.6237182939124253,
+      "q_th": null,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_only",
+      "score": 0.6237182939124253,
+      "q_th": null,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_quality",
+      "score": 0.622894677186835,
+      "q_th": 0.3,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_quality",
+      "score": 0.622894677186835,
+      "q_th": 0.3,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "quality_refine",
+      "score": 0.6196492954063333,
+      "q_th": null,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": {
+        "nc_threshold": 0.3,
+        "clear_threshold": 0.525,
+        "margin": 0.075
+      }
+    },
+    {
+      "mode": "quality_refine",
+      "score": 0.6196492954063333,
+      "q_th": null,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": {
+        "nc_threshold": 0.3,
+        "clear_threshold": 0.525,
+        "margin": 0.075
+      }
+    }
+  ],
+  "selected_mode": "base_only",
+  "selected_validation_score": 0.6284317388107153,
+  "selected_base_source": "first3",
+  "selected_guard_mode": "misleading_to_clear",
+  "selected_base_params": {
+    "promise_no_threshold": 0.65,
+    "evidence_no_threshold": 0.4875,
+    "not_clear_ratio_threshold": 0.25,
+    "timeline_mode": "year_from_2024"
+  },
+  "selected_quality_threshold": null,
+  "selected_quality_refine_params": null,
+  "task_scores": {
+    "promise_status": 0.8185447287243695,
+    "verification_timeline": 0.6076707042373242,
+    "evidence_status": 0.7343889600227628,
+    "evidence_quality": 0.4378728554954685
+  },
+  "task_micro_scores": {
+    "promise_status": 0.9,
+    "verification_timeline": 0.625,
+    "evidence_status": 0.81,
+    "evidence_quality": 0.74
+  },
+  "lowest_field": "evidence_quality",
+  "train_label_distribution": {
+    "promise_status": "No:334, Yes:1466",
+    "verification_timeline": "(empty):334, already:650, between_2_and_5_years:445, more_than_5_years:340, within_2_years:31",
+    "evidence_status": "(empty):334, No:253, Yes:1213",
+    "evidence_quality": "(empty):587, Clear:1000, Misleading:2, Not Clear:211"
+  },
+  "val_true_distribution": {
+    "promise_status": "No:39, Yes:161",
+    "verification_timeline": "(empty):39, already:68, between_2_and_5_years:53, more_than_5_years:37, within_2_years:3",
+    "evidence_status": "(empty):39, No:29, Yes:132",
+    "evidence_quality": "(empty):68, Clear:118, Not Clear:14"
+  },
+  "per_class_f1": {
+    "promise_status": {
+      "No": 0.696969696969697,
+      "Yes": 0.9401197604790419
+    },
+    "verification_timeline": {
+      "": 0.696969696969697,
+      "already": 0.6193548387096774,
+      "within_2_years": 0.5,
+      "between_2_and_5_years": 0.6086956521739131,
+      "more_than_5_years": 0.6133333333333333
+    },
+    "evidence_status": {
+      "": 0.696969696969697,
+      "No": 0.64,
+      "Yes": 0.8661971830985915
+    },
+    "evidence_quality": {
+      "": 0.6724137931034483,
+      "Clear": 0.8366533864541833,
+      "Not Clear": 0.24242424242424243,
+      "Misleading": 0.0
+    }
+  },
+  "val_prediction_distribution": {
+    "promise_status": "No:27, Yes:173",
+    "verification_timeline": "(empty):27, already:87, between_2_and_5_years:39, more_than_5_years:38, within_2_years:9",
+    "evidence_status": "(empty):27, No:21, Yes:152",
+    "evidence_quality": "(empty):48, Clear:133, Not Clear:19"
+  },
+  "test_path": null,
+  "submission_paths": {},
+  "summary_json_path": "/kaggle/working/outputs_esg_v27_1_macbert_large_combined_384len_2seed/27-1SumForGpt.json",
+  "summary_txt_path": "/kaggle/working/outputs_esg_v27_1_macbert_large_combined_384len_2seed/27-1SumForGpt.txt",
+  "generic_summary_json_path": "/kaggle/working/outputs_esg_v27_1_macbert_large_combined_384len_2seed/run_summary_for_chatgpt.json",
+  "generic_summary_txt_path": "/kaggle/working/outputs_esg_v27_1_macbert_large_combined_384len_2seed/run_summary_for_chatgpt.txt"
 }

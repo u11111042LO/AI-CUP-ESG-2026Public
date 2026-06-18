@@ -1,6 +1,6 @@
-numpy
-pandas
-scikit-learn
 torch
 transformers
+pandas
+numpy
+scikit-learn
 tqdm

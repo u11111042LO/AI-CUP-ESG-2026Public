@@ -1,6 +1,401 @@
 {
-  "experiment": "26-3",
-  "summary": "",
-  "metrics": {},
-  "notes": []
+  "run_started_at": "2026-06-17 14:34:38",
+  "approx_train_runtime_min": 54.94,
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "model_name": "hfl/chinese-roberta-wwm-ext-large",
+  "training_mode": "v26_3_roberta_large_add_seed3407_3seed",
+  "quick_test": false,
+  "epochs_note": "normal",
+  "base_seeds": [
+    42,
+    2026,
+    3407
+  ],
+  "quality_seeds": [
+    42,
+    2026,
+    3407
+  ],
+  "run_seed": 42,
+  "train_path": "/content/gdrive/MyDrive/aicup_esg_2026/data/vpesg_4k_train_1000.json",
+  "official_val_path": "/content/gdrive/MyDrive/aicup_esg_2026/data/vpesg4k_val_1000.json",
+  "output_dir": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_3_roberta_large_add_seed3407_3seed",
+  "train_size": 1800,
+  "val_size": 200,
+  "MAX_LEN": 384,
+  "QUALITY_MAX_LEN": 384,
+  "TRUNCATION_MODE": "head_tail",
+  "METADATA_PREFIX": true,
+  "HEAD_TAIL_HEAD_RATIO": 0.6,
+  "COMBINE_TRAIN_AND_VAL": true,
+  "HOLDOUT_RATIO": 0.1,
+  "HOLDOUT_SEED": 20260619,
+  "score_note": "selected_validation_score is internal holdout after combining train+official_val; not directly comparable with official-val runs. v26-3 extends v26-1 large model by importing seeds 42/2026 and training seed 3407 for more ensemble stability.",
+  "BATCH_SIZE": 1,
+  "effective_batch_size": 16,
+  "EPOCHS": 8,
+  "QUALITY_EPOCHS": 6,
+  "LR": 1e-05,
+  "QUALITY_LR": 1e-05,
+  "WEIGHT_DECAY": 0.01,
+  "WARMUP_RATIO": 0.1,
+  "DROPOUT": 0.2,
+  "LABEL_SMOOTHING": 0.03,
+  "QUALITY_LABEL_SMOOTHING": 0.02,
+  "GRAD_ACCUM_STEPS": 16,
+  "PATIENCE": 3,
+  "QUALITY_NOT_CLEAR_OVERSAMPLE": 4,
+  "QUALITY_NOT_CLEAR_WEIGHT_BOOST": 2.3,
+  "base_single_seed_results": [
+    {
+      "seed": 42,
+      "best_epoch": -1,
+      "best_score_saved": -1.0,
+      "time_min": 0.0,
+      "path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_3_roberta_large_add_seed3407_3seed/base_seed_42.pt"
+    },
+    {
+      "seed": 2026,
+      "best_epoch": -1,
+      "best_score_saved": -1.0,
+      "time_min": 0.0,
+      "path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_3_roberta_large_add_seed3407_3seed/base_seed_2026.pt"
+    },
+    {
+      "seed": 3407,
+      "best_epoch": 7,
+      "best_score_saved": 0.6215234755145479,
+      "time_min": 31.307138379414877,
+      "path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_3_roberta_large_add_seed3407_3seed/base_seed_3407.pt"
+    }
+  ],
+  "quality_single_seed_results": [
+    {
+      "seed": 42,
+      "best_epoch": -1,
+      "best_score_saved": -1.0,
+      "time_min": 0.0,
+      "path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_3_roberta_large_add_seed3407_3seed/quality_seed_42.pt"
+    },
+    {
+      "seed": 2026,
+      "best_epoch": -1,
+      "best_score_saved": -1.0,
+      "time_min": 0.0,
+      "path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_3_roberta_large_add_seed3407_3seed/quality_seed_2026.pt"
+    },
+    {
+      "seed": 3407,
+      "best_epoch": 1,
+      "best_score_saved": 0.4139022326958518,
+      "time_min": 19.180404210090636,
+      "path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_3_roberta_large_add_seed3407_3seed/quality_seed_3407.pt"
+    }
+  ],
+  "base_candidate_scores": [
+    {
+      "name": "base_first3_p0.65_e0.4875",
+      "score": 0.6423801138001356,
+      "params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "base_source": "first3"
+    },
+    {
+      "name": "base_all_p0.65_e0.4875",
+      "score": 0.6423801138001356,
+      "params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "base_source": "all"
+    },
+    {
+      "name": "base_first3_p0.65_e0.5",
+      "score": 0.6383341075786899,
+      "params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "base_source": "first3"
+    },
+    {
+      "name": "base_all_p0.65_e0.5",
+      "score": 0.6383341075786899,
+      "params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "base_source": "all"
+    }
+  ],
+  "final_candidate_scores_top": [
+    {
+      "mode": "base_quality",
+      "score": 0.6448423371880122,
+      "q_th": 0.3,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_quality",
+      "score": 0.6448423371880122,
+      "q_th": 0.3,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_only",
+      "score": 0.6437202278236825,
+      "q_th": null,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_only",
+      "score": 0.6437202278236825,
+      "q_th": null,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "quality_refine",
+      "score": 0.6433939002840516,
+      "q_th": null,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": {
+        "nc_threshold": 0.3,
+        "clear_threshold": 0.525,
+        "margin": 0.075
+      }
+    },
+    {
+      "mode": "quality_refine",
+      "score": 0.6433939002840516,
+      "q_th": null,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": {
+        "nc_threshold": 0.3,
+        "clear_threshold": 0.525,
+        "margin": 0.075
+      }
+    },
+    {
+      "mode": "base_quality",
+      "score": 0.6410879043560856,
+      "q_th": 0.3,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_quality",
+      "score": 0.6410879043560856,
+      "q_th": 0.3,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_only",
+      "score": 0.6396742216022367,
+      "q_th": null,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_only",
+      "score": 0.6396742216022367,
+      "q_th": null,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "quality_refine",
+      "score": 0.639453476051128,
+      "q_th": null,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": {
+        "nc_threshold": 0.3,
+        "clear_threshold": 0.525,
+        "margin": 0.075
+      }
+    },
+    {
+      "mode": "quality_refine",
+      "score": 0.639453476051128,
+      "q_th": null,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": {
+        "nc_threshold": 0.3,
+        "clear_threshold": 0.525,
+        "margin": 0.075
+      }
+    }
+  ],
+  "selected_mode": "base_quality",
+  "selected_validation_score": 0.6448423371880122,
+  "selected_base_source": "first3",
+  "selected_guard_mode": "misleading_to_clear",
+  "selected_base_params": {
+    "promise_no_threshold": 0.65,
+    "evidence_no_threshold": 0.4875,
+    "not_clear_ratio_threshold": 0.25,
+    "timeline_mode": "year_from_2024"
+  },
+  "selected_quality_threshold": 0.3,
+  "selected_quality_refine_params": null,
+  "task_scores": {
+    "promise_status": 0.8325892857142857,
+    "verification_timeline": 0.6114425008056447,
+    "evidence_status": 0.7539201440635867,
+    "evidence_quality": 0.45837731915780694
+  },
+  "task_micro_scores": {
+    "promise_status": 0.91,
+    "verification_timeline": 0.63,
+    "evidence_status": 0.825,
+    "evidence_quality": 0.75
+  },
+  "lowest_field": "evidence_quality",
+  "train_label_distribution": {
+    "promise_status": "No:334, Yes:1466",
+    "verification_timeline": "(empty):334, already:650, between_2_and_5_years:445, more_than_5_years:340, within_2_years:31",
+    "evidence_status": "(empty):334, No:253, Yes:1213",
+    "evidence_quality": "(empty):587, Clear:1000, Misleading:2, Not Clear:211"
+  },
+  "val_true_distribution": {
+    "promise_status": "No:39, Yes:161",
+    "verification_timeline": "(empty):39, already:68, between_2_and_5_years:53, more_than_5_years:37, within_2_years:3",
+    "evidence_status": "(empty):39, No:29, Yes:132",
+    "evidence_quality": "(empty):68, Clear:118, Not Clear:14"
+  },
+  "per_class_f1": {
+    "promise_status": {
+      "No": 0.71875,
+      "Yes": 0.9464285714285714
+    },
+    "verification_timeline": {
+      "": 0.71875,
+      "already": 0.6134969325153374,
+      "within_2_years": 0.46153846153846156,
+      "between_2_and_5_years": 0.5869565217391305,
+      "more_than_5_years": 0.6764705882352942
+    },
+    "evidence_status": {
+      "": 0.71875,
+      "No": 0.6557377049180327,
+      "Yes": 0.8872727272727273
+    },
+    "evidence_quality": {
+      "": 0.752,
+      "Clear": 0.8376068376068376,
+      "Not Clear": 0.24390243902439024,
+      "Misleading": 0.0
+    }
+  },
+  "val_prediction_distribution": {
+    "promise_status": "No:25, Yes:175",
+    "verification_timeline": "(empty):25, already:95, between_2_and_5_years:39, more_than_5_years:31, within_2_years:10",
+    "evidence_status": "(empty):25, No:32, Yes:143",
+    "evidence_quality": "(empty):57, Clear:116, Not Clear:27"
+  },
+  "test_path": null,
+  "submission_paths": {},
+  "summary_json_path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_3_roberta_large_add_seed3407_3seed/26-3SumForGpt.json",
+  "summary_txt_path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_3_roberta_large_add_seed3407_3seed/26-3SumForGpt.txt",
+  "generic_summary_json_path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_3_roberta_large_add_seed3407_3seed/run_summary_for_chatgpt.json",
+  "generic_summary_txt_path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_3_roberta_large_add_seed3407_3seed/run_summary_for_chatgpt.txt"
 }

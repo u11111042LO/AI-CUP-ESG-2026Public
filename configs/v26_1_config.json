@@ -1,7 +1,0 @@
-{
-  "experiment": "v26_1",
-  "model": "roberta-large",
-  "max_length": 384,
-  "seeds": [42, 3407],
-  "notes": "RoBERTa large combined dataset baseline."
-}

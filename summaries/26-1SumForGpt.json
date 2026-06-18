@@ -1,6 +1,385 @@
 {
-  "experiment": "26-1",
-  "summary": "",
-  "metrics": {},
-  "notes": []
+  "run_started_at": "2026-06-17 10:26:51",
+  "approx_train_runtime_min": 115.38,
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "model_name": "hfl/chinese-roberta-wwm-ext-large",
+  "training_mode": "v26_1_roberta_large_combined_384len_2seed",
+  "quick_test": false,
+  "epochs_note": "normal",
+  "base_seeds": [
+    42,
+    2026
+  ],
+  "quality_seeds": [
+    42,
+    2026
+  ],
+  "run_seed": 42,
+  "train_path": "/content/gdrive/MyDrive/aicup_esg_2026/data/vpesg_4k_train_1000.json",
+  "official_val_path": "/content/gdrive/MyDrive/aicup_esg_2026/data/vpesg4k_val_1000.json",
+  "output_dir": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_1_roberta_large_combined_384len_2seed",
+  "train_size": 1800,
+  "val_size": 200,
+  "MAX_LEN": 384,
+  "QUALITY_MAX_LEN": 384,
+  "TRUNCATION_MODE": "head_tail",
+  "METADATA_PREFIX": true,
+  "HEAD_TAIL_HEAD_RATIO": 0.6,
+  "COMBINE_TRAIN_AND_VAL": true,
+  "HOLDOUT_RATIO": 0.1,
+  "HOLDOUT_SEED": 20260619,
+  "score_note": "selected_validation_score is internal holdout after combining train+official_val; not directly comparable with official-val runs. v26-1 uses another holdout seed and trains 3 base/quality seeds from scratch for model diversity.",
+  "BATCH_SIZE": 1,
+  "effective_batch_size": 16,
+  "EPOCHS": 8,
+  "QUALITY_EPOCHS": 6,
+  "LR": 1e-05,
+  "QUALITY_LR": 1e-05,
+  "WEIGHT_DECAY": 0.01,
+  "WARMUP_RATIO": 0.1,
+  "DROPOUT": 0.2,
+  "LABEL_SMOOTHING": 0.03,
+  "QUALITY_LABEL_SMOOTHING": 0.02,
+  "GRAD_ACCUM_STEPS": 16,
+  "PATIENCE": 3,
+  "QUALITY_NOT_CLEAR_OVERSAMPLE": 4,
+  "QUALITY_NOT_CLEAR_WEIGHT_BOOST": 2.3,
+  "base_single_seed_results": [
+    {
+      "seed": 42,
+      "best_epoch": 5,
+      "best_score_saved": 0.6349092896619295,
+      "time_min": 31.415570267041524,
+      "path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_1_roberta_large_combined_384len_2seed/base_seed_42.pt"
+    },
+    {
+      "seed": 2026,
+      "best_epoch": 5,
+      "best_score_saved": 0.6357927473732111,
+      "time_min": 32.05142325957616,
+      "path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_1_roberta_large_combined_384len_2seed/base_seed_2026.pt"
+    }
+  ],
+  "quality_single_seed_results": [
+    {
+      "seed": 42,
+      "best_epoch": 2,
+      "best_score_saved": 0.43954435321039176,
+      "time_min": 24.76155182917913,
+      "path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_1_roberta_large_combined_384len_2seed/quality_seed_42.pt"
+    },
+    {
+      "seed": 2026,
+      "best_epoch": 2,
+      "best_score_saved": 0.450076564599759,
+      "time_min": 24.717195359865823,
+      "path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_1_roberta_large_combined_384len_2seed/quality_seed_2026.pt"
+    }
+  ],
+  "base_candidate_scores": [
+    {
+      "name": "base_first3_p0.65_e0.5",
+      "score": 0.6340544184543054,
+      "params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "base_source": "first3"
+    },
+    {
+      "name": "base_all_p0.65_e0.5",
+      "score": 0.6340544184543054,
+      "params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "base_source": "all"
+    },
+    {
+      "name": "base_first3_p0.65_e0.4875",
+      "score": 0.6323490608464416,
+      "params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "base_source": "first3"
+    },
+    {
+      "name": "base_all_p0.65_e0.4875",
+      "score": 0.6323490608464416,
+      "params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "base_source": "all"
+    }
+  ],
+  "final_candidate_scores_top": [
+    {
+      "mode": "base_quality",
+      "score": 0.6448011809050403,
+      "q_th": 0.3,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_quality",
+      "score": 0.6448011809050403,
+      "q_th": 0.3,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_quality",
+      "score": 0.6426756376324326,
+      "q_th": 0.3,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_quality",
+      "score": 0.6426756376324326,
+      "q_th": 0.3,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "quality_refine",
+      "score": 0.6354546168808721,
+      "q_th": null,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": {
+        "nc_threshold": 0.3,
+        "clear_threshold": 0.525,
+        "margin": 0.075
+      }
+    },
+    {
+      "mode": "quality_refine",
+      "score": 0.6354546168808721,
+      "q_th": null,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": {
+        "nc_threshold": 0.3,
+        "clear_threshold": 0.525,
+        "margin": 0.075
+      }
+    },
+    {
+      "mode": "base_only",
+      "score": 0.634661754734186,
+      "q_th": null,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_only",
+      "score": 0.634661754734186,
+      "q_th": null,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.5,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "quality_refine",
+      "score": 0.6333408597882406,
+      "q_th": null,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": {
+        "nc_threshold": 0.3,
+        "clear_threshold": 0.525,
+        "margin": 0.075
+      }
+    },
+    {
+      "mode": "quality_refine",
+      "score": 0.6333408597882406,
+      "q_th": null,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": {
+        "nc_threshold": 0.3,
+        "clear_threshold": 0.525,
+        "margin": 0.075
+      }
+    },
+    {
+      "mode": "base_only",
+      "score": 0.6325585096653392,
+      "q_th": null,
+      "base_source": "first3",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    },
+    {
+      "mode": "base_only",
+      "score": 0.6325585096653392,
+      "q_th": null,
+      "base_source": "all",
+      "guard_mode": "misleading_to_clear",
+      "base_params": {
+        "promise_no_threshold": 0.65,
+        "evidence_no_threshold": 0.4875,
+        "not_clear_ratio_threshold": 0.25,
+        "timeline_mode": "year_from_2024"
+      },
+      "quality_refine_params": null
+    }
+  ],
+  "selected_mode": "base_quality",
+  "selected_validation_score": 0.6448011809050403,
+  "selected_base_source": "first3",
+  "selected_guard_mode": "misleading_to_clear",
+  "selected_base_params": {
+    "promise_no_threshold": 0.65,
+    "evidence_no_threshold": 0.5,
+    "not_clear_ratio_threshold": 0.25,
+    "timeline_mode": "year_from_2024"
+  },
+  "selected_quality_threshold": 0.3,
+  "selected_quality_refine_params": null,
+  "task_scores": {
+    "promise_status": 0.8325892857142857,
+    "verification_timeline": 0.6232235803119037,
+    "evidence_status": 0.747883886703558,
+    "evidence_quality": 0.45838463058380075
+  },
+  "task_micro_scores": {
+    "promise_status": 0.91,
+    "verification_timeline": 0.645,
+    "evidence_status": 0.825,
+    "evidence_quality": 0.74
+  },
+  "lowest_field": "evidence_quality",
+  "train_label_distribution": {
+    "promise_status": "No:334, Yes:1466",
+    "verification_timeline": "(empty):334, already:650, between_2_and_5_years:445, more_than_5_years:340, within_2_years:31",
+    "evidence_status": "(empty):334, No:253, Yes:1213",
+    "evidence_quality": "(empty):587, Clear:1000, Misleading:2, Not Clear:211"
+  },
+  "val_true_distribution": {
+    "promise_status": "No:39, Yes:161",
+    "verification_timeline": "(empty):39, already:68, between_2_and_5_years:53, more_than_5_years:37, within_2_years:3",
+    "evidence_status": "(empty):39, No:29, Yes:132",
+    "evidence_quality": "(empty):68, Clear:118, Not Clear:14"
+  },
+  "per_class_f1": {
+    "promise_status": {
+      "No": 0.71875,
+      "Yes": 0.9464285714285714
+    },
+    "verification_timeline": {
+      "": 0.71875,
+      "already": 0.6347305389221557,
+      "within_2_years": 0.46153846153846156,
+      "between_2_and_5_years": 0.5934065934065934,
+      "more_than_5_years": 0.7076923076923077
+    },
+    "evidence_status": {
+      "": 0.71875,
+      "No": 0.6415094339622641,
+      "Yes": 0.8833922261484098
+    },
+    "evidence_quality": {
+      "": 0.717948717948718,
+      "Clear": 0.8298755186721992,
+      "Not Clear": 0.2857142857142857,
+      "Misleading": 0.0
+    }
+  },
+  "val_prediction_distribution": {
+    "promise_status": "No:25, Yes:175",
+    "verification_timeline": "(empty):25, already:99, between_2_and_5_years:38, more_than_5_years:28, within_2_years:10",
+    "evidence_status": "(empty):25, No:24, Yes:151",
+    "evidence_quality": "(empty):49, Clear:123, Not Clear:28"
+  },
+  "test_path": null,
+  "submission_paths": {},
+  "summary_json_path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_1_roberta_large_combined_384len_2seed/26-1SumForGpt.json",
+  "summary_txt_path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_1_roberta_large_combined_384len_2seed/26-1SumForGpt.txt",
+  "generic_summary_json_path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_1_roberta_large_combined_384len_2seed/run_summary_for_chatgpt.json",
+  "generic_summary_txt_path": "/content/gdrive/MyDrive/aicup_esg_2026/outputs/outputs_esg_v26_1_roberta_large_combined_384len_2seed/run_summary_for_chatgpt.txt"
 }

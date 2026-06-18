@@ -1,9 +1,0 @@
-{
-  "experiment": "v28_1",
-  "strategy": "public_field_hybrid",
-  "inputs": {
-    "v26_1": "submissions/Sub_v26_1.csv",
-    "v26_3": "submissions/Sub_v26_3.csv"
-  },
-  "output": "submissions/Sub_v28_1.csv"
-}

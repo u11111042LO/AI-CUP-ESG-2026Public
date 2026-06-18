@@ -1,6 +1,40 @@
 {
-  "experiment": "28-1",
-  "summary": "",
-  "metrics": {},
-  "notes": []
+  "output": "/kaggle/working/Sub_v28_1.csv",
+  "diff_vs_v26_1": {
+    "promise_status": 23,
+    "verification_timeline": 113,
+    "evidence_status": 76,
+    "evidence_quality": 74
+  },
+  "diff_vs_v26_3": {
+    "promise_status": 0,
+    "verification_timeline": 0,
+    "evidence_status": 0,
+    "evidence_quality": 41
+  },
+  "quality_imported_count": 1438,
+  "bad_quality_fixed": 0,
+  "counts": {
+    "promise_status": {
+      "Yes": 1746,
+      "No": 254
+    },
+    "verification_timeline": {
+      "already": 933,
+      "between_2_and_5_years": 433,
+      "more_than_5_years": 289,
+      "N/A": 254,
+      "within_2_years": 91
+    },
+    "evidence_status": {
+      "Yes": 1454,
+      "No": 292,
+      "N/A": 254
+    },
+    "evidence_quality": {
+      "Clear": 1174,
+      "N/A": 546,
+      "Not Clear": 280
+    }
+  }
 }
