@@ -1,0 +1,7 @@
+{
+  "experiment": "v26_3",
+  "model": "roberta-large",
+  "max_length": 384,
+  "seeds": [42, 3407, 2026],
+  "notes": "RoBERTa large with additional seed 3407 and three-seed ensemble."
+}
