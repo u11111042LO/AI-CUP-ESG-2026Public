@@ -34,6 +34,12 @@ AICUP-2026-VeriPromiseESG/
 ├── requirements.txt
 ├── .gitignore
 
+├── data/
+│   ├── vpesg4k_train_1000.json
+│   ├── vpesg4k_val_1000.json
+│   ├── vpesg4k_test_2000.json
+│   └── vpesg4k_test_2000.csv
+
 ├── scripts/
 │   ├── train_v26_1_roberta_large_combined_384len_2seed.py
 │   ├── train_v26_3_roberta_large_add_seed3407_3seed.py
@@ -56,7 +62,7 @@ AICUP-2026-VeriPromiseESG/
     └── experiment_log.md
 ```
 
-Large model checkpoint files, official datasets, and full output folders are not included in this repository because of file size limitations.
+Large model checkpoint files and full output folders are not included in this repository because of file size limitations.
 
 ---
 
@@ -84,15 +90,14 @@ pip install -r requirements.txt
 
 ## Dataset
 
-The official dataset is provided by the AI CUP 2026 VeriPromiseESG competition organizer and is not included in this repository.
-
-Expected local structure:
+The dataset files currently included in this repository are:
 
 ```text
 data/
-├── vpesg_4k_train_1000.json
+├── vpesg4k_train_1000.json
 ├── vpesg4k_val_1000.json
-└── vpesg4k_test_2000.json
+├── vpesg4k_test_2000.json
+└── vpesg4k_test_2000.csv
 ```
 
 The submission generation scripts assume that the prediction files are placed under `submissions/`.

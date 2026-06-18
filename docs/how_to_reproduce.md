@@ -21,13 +21,14 @@ pip install -r requirements.txt
 
 ## Dataset
 
-Place the official competition datasets under `data/`:
+Place the dataset files under `data/`:
 
 ```text
 data/
-├── vpesg_4k_train_1000.json
+├── vpesg4k_train_1000.json
 ├── vpesg4k_val_1000.json
-└── vpesg4k_test_2000.json
+├── vpesg4k_test_2000.json
+└── vpesg4k_test_2000.csv
 ```
 
 ## Training

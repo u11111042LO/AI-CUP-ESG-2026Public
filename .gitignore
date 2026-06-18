@@ -3,7 +3,6 @@
 .vscode/
 
 # Data and model artifacts
-data/
 models/
 checkpoints/
 outputs/
